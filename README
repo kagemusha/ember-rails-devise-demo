@@ -1,0 +1,19 @@
+Ember Rails Devise
+========================
+
+This application was generated with the rails_apps_composer gem:
+https://github.com/RailsApps/rails_apps_composer
+provided by the RailsApps Project:
+http://railsapps.github.com/
+
+________________________
+
+Recipes:
+["controllers", "email", "extras", "frontend", "gems", "models", "readme", "routes", "setup", "testing", "views"]
+
+Preferences:
+{:dev_webserver=>"thin", :prod_webserver=>nil, :database=>"sqlite", :templates=>"haml", :unit_test=>"rspec", :integration=>"rspec-capybara", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :form_builder=>"none", :email=>"none", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :quiet_assets=>true, :local_env_file=>true, :better_errors=>true, :ban_spiders=>true, :rvmrc=>true, :github=>false, :starter_app=>"none"}
+
+________________________
+
+License
