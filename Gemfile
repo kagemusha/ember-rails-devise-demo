@@ -22,7 +22,7 @@ gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem "active_model_serializers"
-gem "ember-rails"
+gem 'ember-rails' #, github: 'emberjs/ember-rails'
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "figaro", ">= 0.5.3"
 gem "better_errors", ">= 0.3.2", :group => :development

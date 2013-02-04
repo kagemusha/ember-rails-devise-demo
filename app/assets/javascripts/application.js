@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require ember_rails_devise
+App = Ember.Application.create();
 //= require_tree .
