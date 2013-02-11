@@ -1,0 +1,17 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <div class="brand strong">{{#linkTo home}}EmbeRails{{/linkTo}}</div>
+      <ul class="nav">
+      </ul>
+      <div class="btn-group pull-right">
+        {{#if authenticated}}
+            <button class="btn" {{action logout}}>Logout</button>
+        {{else}}
+            {{view App.MenuItem href="#/login" label="Login" }}
+            {{view App.MenuItem href="#/registration" label="Register"}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,0 @@
-App.Router.map(function() {
-
-});
