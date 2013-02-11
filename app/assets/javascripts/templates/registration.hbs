@@ -1,0 +1,25 @@
+<div class="form-horizontal">
+  <legend>Registration</legend>
+  <div class="control-group">
+    <label class="control-label" for="email">Email</label>
+    <div class="controls">
+      {{view Em.TextField valueBinding="email" id="email" action="create"}}
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="password" type="password" id="password" action="create"}}
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="password_confirmation">Password</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="password_confirmation" type="password" id="password_confirmation" action="create"}}
+    </div>
+  </div>
+  <div class="form-actions">
+    <input {{action register}} type="submit" class="btn btn-primary" value="Register" />
+    <input {{action cancel}} type="submit" class="btn" value="Cancel" />
+  </div>
+</div>
