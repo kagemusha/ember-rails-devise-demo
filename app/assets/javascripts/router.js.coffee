@@ -61,3 +61,29 @@ App.LoginRoute = Ember.Route.extend
         error: (jqXHR, textStatus, errorThrown) ->
           if jqXHR.status==401
             route.controllerFor('login').set "errorMsg", "That email/password combo didn't work.  Please try again"
+
+App.RegistrationRoute = Ember.Route.extend
+  model: -> Ember.Object.create()
+  events:
+    register: ->
+      #password = @currentModel.getProperties("password")
+      route = @
+      $.ajax
+        url: App.urls.register
+        type: "POST"
+        data:
+          #would be nice if could do something like this
+            #user: @currentModel.getJSON
+          "user[name]": @currentModel.name
+          "user[email]": @currentModel.email
+          "user[password]": @currentModel.password
+          "user[password_confirmation]": @currentModel.password_confirmation
+        success: (data) ->
+          App.currentUser =  data.user
+          App.LoginStateManager.transitionTo "authenticated"
+          route.transitionTo 'home'
+        error: (jqXHR, textStatus, errorThrown) ->
+          route.controllerFor('login').set "errorMsg", "That email/password combo didn't work.  Please try again"
+    cancel: ->
+      log.log "cancelling registration"
+      @transitionTo 'home'
