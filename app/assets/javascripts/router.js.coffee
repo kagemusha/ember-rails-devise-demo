@@ -9,37 +9,26 @@ App.Router.map ->
 
 
 App.ApplicationRoute = Ember.Route.extend
-## this works in other apps i've done - not sure why isn't working here but
-## event not getting picked up
 #  events:
 #    logout: ->
 #      log.log "Logging out"
 #      App.LoginStateManager.transitionTo "notAuthenticated"
 #      @transitionTo 'home'
+    ## logout event not getting picked up here for some reason
+    ## this works in another app i've done - not sure why isn't working here but
+    ## leads to needless duplication below
 
 App.IndexRoute = Ember.Route.extend
   redirect: -> @transitionTo 'home'
 
 App.HomeRoute = Ember.Route.extend
   events:
-    logout: ->
-      log.log "loggin'out"
-      route = this
-      $.ajax
-        url: App.urls.logout
-        type: "DELETE"
-        dataType: "json"
-        success: ->
-          log.log "Logout success"
-          App.currentUser = null
-          App.LoginStateManager.transitionTo "notAuthenticated"
-          route.transitionTo 'home'
-        error: (jqXHR, textStatus, errorThrown) ->
-          if jqXHR.status==204 #this is fine.  logout successful no response returned
-            route.transitionTo 'home'
-            App.LoginStateManager.transitionTo 'notAuthenticated'
-            return
-          alert "Error logging out: #{errorThrown}"
+    logout: -> App.logout this
+
+App.HelpRoute = Ember.Route.extend
+  events:
+    logout: -> App.logout this
+
 
 App.LoginRoute = Ember.Route.extend
   model: -> Ember.Object.create()
@@ -50,44 +39,15 @@ App.LoginRoute = Ember.Route.extend
       log.log "cancelling login"
       @transitionTo 'home'
     login: ->
-      route = @
-      $.ajax
-        url: App.urls.login
-        type: "POST"
-        data:
-        #user: @currentModel.getJSON #would be nice if could do something like this
-          "user[email]": @currentModel.email
-          "user[password]": @currentModel.password
-        success: (data) ->
-          App.currentUser =  data.user
-          App.LoginStateManager.transitionTo "authenticated"
-          route.transitionTo 'home'
-        error: (jqXHR, textStatus, errorThrown) ->
-          if jqXHR.status==401
-            route.controllerFor('login').set "errorMsg", "That email/password combo didn't work.  Please try again"
+      log.log "Logging in..."
+      App.login this
 
 App.RegistrationRoute = Ember.Route.extend
   model: -> Ember.Object.create()
   events:
     register: ->
-      #password = @currentModel.getProperties("password")
-      route = @
-      $.ajax
-        url: App.urls.register
-        type: "POST"
-        data:
-          #would be nice if could do something like this
-            #user: @currentModel.getJSON
-          "user[name]": @currentModel.name
-          "user[email]": @currentModel.email
-          "user[password]": @currentModel.password
-          "user[password_confirmation]": @currentModel.password_confirmation
-        success: (data) ->
-          App.currentUser =  data.user
-          App.LoginStateManager.transitionTo "authenticated"
-          route.transitionTo 'home'
-        error: (jqXHR, textStatus, errorThrown) ->
-          route.controllerFor('login').set "errorMsg", "That email/password combo didn't work.  Please try again"
+      log.log "Registering..."
+      App.register this
     cancel: ->
       log.log "cancelling registration"
       @transitionTo 'home'
