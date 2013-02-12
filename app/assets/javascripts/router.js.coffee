@@ -1,3 +1,6 @@
+## In a real app you will probably want to separate components into different files
+## They are grouped together here for ease of exposition
+
 App.Router.map ->
   @route "home"
   @route "help"
