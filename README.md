@@ -1,17 +1,18 @@
 Ember Rails Devise Demo
 =======================
 
-This app provides working example of using Ember with Rails and Devise.  As Ember matures, I hope to expand it with Ember
-paradigms for common web functionality.
+This app is working example of using Ember with Rails and Devise.  As Ember matures, I hope to expand it with other common Ember
+paradigms.
 
 Disclaimer: Ember.js is still very much in flux, I am far from an ember expert, and documentation and best practices are still
-sparse.  Take everything here with a grain of salt and if you know of a better way of doing thing, by all means contribute.
+sparse.  Take everything here with a grain of salt and if you know of a better way of doing thing, by all means let me know.
 
 This app runs currently runs on Ember 1.0.0-pre4
 
 Features
 --------
 * User Login and Registration using Devise
+* Illustrates basic usages of Ember components like routes, controllers, views, templates, state managers.
 
 Other Ember.js/Rails Projects
 -----------------------------
