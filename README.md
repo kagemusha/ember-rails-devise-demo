@@ -25,6 +25,7 @@ Getting Started
 ---------------
 
 To run the app:
+
     (clone or fork the project)
     $ bundle install
     $ bundle exec rake db:create
