@@ -1,12 +1,13 @@
 App.Router.map ->
   @route "home"
   @route "help"
-  @resource "login"
-  @resource "registration"
+  @route "login"
+  @route "registration"
 
 
 App.ApplicationRoute = Ember.Route.extend
-# this should work - not sure why isn't
+## this works in other apps i've done - not sure why isn't working here but
+## event not getting picked up
 #  events:
 #    logout: ->
 #      log.log "Logging out"
