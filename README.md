@@ -17,12 +17,14 @@ Features
 Other Ember.js/Rails Projects
 -----------------------------
 
+### Demos
+
 I found both of the following helpful:
 
 * [ember_data_examle](https://github.com/dgeb/ember_data_example)
 * [ember_todo](https://github.com/Skalar/ember_todo)
 
-Think HTML/Handlebars is a tad verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
+### Think HTML/Handlebars is a tad verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
 * [emblem.js](https://github.com/machty/emblem.js)
 
 
