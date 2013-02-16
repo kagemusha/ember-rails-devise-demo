@@ -30,7 +30,7 @@ I found both of the following helpful:
 
 * [emblem.js](https://github.com/machty/emblem.js)
 
-  Think HTML/Handlebars is a tad verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
+  Think HTML/Handlebars too verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
 
 
 Getting Started
