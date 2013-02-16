@@ -6,12 +6,16 @@ paradigms.
 
 **Disclaimer:** Ember.js is still very new and in flux, I am far from an expert, and documentation, though improving, is still not comprehensive.  While I intend to update and expand this demo with best practices as they become known to me, at present the code here should be viewed more as possible ways to get things done.  Welcome input on improvements.
 
-This app runs currently runs on Ember 1.0.0-pre4
 
 Features
 --------
 * User Login and Registration using Devise
 * Illustrates basic usages of Ember components like routes, controllers, views, templates, state managers.
+
+Ember Version
+-------------
+This app runs currently runs on Ember rc4 and Handlebars rc3.  Though the ember-rails gem is included in the gemfile, the app uses the files in javascripts/vendor.  This will change when ember-rails is updated.
+
 
 Other Ember.js/Rails Resources
 ------------------------------
