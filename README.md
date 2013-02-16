@@ -28,8 +28,9 @@ I found both of the following helpful:
 
 ### Add-ons
 
-Think HTML/Handlebars is a tad verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
 * [emblem.js](https://github.com/machty/emblem.js)
+
+  Think HTML/Handlebars is a tad verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
 
 
 Getting Started
