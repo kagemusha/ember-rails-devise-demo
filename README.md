@@ -21,7 +21,7 @@ Other Ember.js/Rails Resources
 I found both of the following helpful:
 * [Ember.js Peepcode (Jan 2013)](https://peepcode.com/products/emberjs)
 
-  Worthwhile, though found it easier to follow it at 2X speed as recitation a tad slow
+  Definitely worthwhile, though found it easier to watch it at 2X speed as recitation a tad slow
   
 * [ember_data_examle](https://github.com/dgeb/ember_data_example)
 * [ember_todo](https://github.com/Skalar/ember_todo)
