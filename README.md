@@ -13,8 +13,8 @@ Features
 * User Login and Registration using Devise
 * Illustrates basic usages of Ember components like routes, controllers, views, templates, state managers.
 
-Other Ember.js/Rails Projects
------------------------------
+Other Ember.js/Rails Resources
+------------------------------
 
 ### Demos and Learning Resources
 
