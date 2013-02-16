@@ -4,8 +4,7 @@ Ember Rails Devise Demo
 This app is working example of using Ember with Rails and Devise.  As Ember matures, I hope to expand it with other common Ember
 paradigms.
 
-Disclaimer: Ember.js is still very much in flux, I am far from an ember expert, and documentation and best practices are still
-sparse.  Take everything here with a grain of salt and if you know of a better way of doing thing, by all means let me know.
+**Disclaimer:** Ember.js is still very new and in flux, I am far from an expert, and documentation, though improving, is still not comprehensive.  While I intend to update and expand this demo with best practices as it becomes known to me, at present the code here should be viewed more as possible ways to get things done.
 
 This app runs currently runs on Ember 1.0.0-pre4
 
@@ -17,10 +16,11 @@ Features
 Other Ember.js/Rails Projects
 -----------------------------
 
-### Demos
+### Demos and Learning Resources
 
 I found both of the following helpful:
-
+* [Ember.js Peepcode (Jan 2013)](https://peepcode.com/products/emberjs)
+  Definitely worthwhile, though found it much easier to follow when watched it at 2X as recitation was a tad slow :-)
 * [ember_data_examle](https://github.com/dgeb/ember_data_example)
 * [ember_todo](https://github.com/Skalar/ember_todo)
 
