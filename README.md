@@ -14,7 +14,7 @@ Features
 
 Ember Version
 -------------
-This app runs currently runs on Ember rc4 and Handlebars rc3.  Though the ember-rails gem is included in the gemfile, the app uses the files in javascripts/vendor.  This will change when ember-rails is updated.
+This app runs currently runs on [Ember.js 1.0 RC1](http://emberjs.com/blog/2013/02/15/ember-1-0-rc/)
 
 
 Other Ember.js/Rails Resources
@@ -22,11 +22,18 @@ Other Ember.js/Rails Resources
 
 ### Demos and Learning Resources
 
-I found both of the following helpful:
+The official guides:
+
+* http://emberjs.com/guides/
+
+Peepcode
+
 * [Ember.js Peepcode (Jan 2013)](https://peepcode.com/products/emberjs)
 
   Definitely worthwhile, though found it easier to watch it at 2X speed as recitation a tad slow
   
+I found both of the following demos helpful (and new ones appearing all the time):
+
 * [ember_data_examle](https://github.com/dgeb/ember_data_example)
 * [ember_todo](https://github.com/Skalar/ember_todo)
 
