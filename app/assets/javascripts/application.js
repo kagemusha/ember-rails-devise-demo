@@ -19,6 +19,6 @@
 
 //= require ember-data
 //= require_self
-//= require ember_rails_devise
+//= require ember_rails_devise_demo
 App = Ember.Application.create();
 //= require_tree .
