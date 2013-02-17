@@ -39,9 +39,10 @@ I found both of the following demos helpful (and new ones appearing all the time
 
 ### Add-ons
 
+  Think HTML/Handlebars too verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
+
 * [emblem.js](https://github.com/machty/emblem.js)
 
-  Think HTML/Handlebars too verbose?  Alex Matchneer is developing a [Slim](http://slim-lang.com/)-like templating solution:
 
 
 Getting Started
