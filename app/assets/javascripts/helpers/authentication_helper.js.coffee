@@ -34,7 +34,7 @@ App.register = (route) ->
 
 
 
-App.logout = (route) ->
+App.logout = (transitionRoute) ->
   log.log "Logging out..."
   $.ajax
     url: App.urls.logout
@@ -46,7 +46,7 @@ App.logout = (route) ->
       if jqXHR.status==204 #this is fine.  logout successful no response returned
         log.log "Logged out"
         App.currentUser = null
-        route.transitionTo 'home'
+        transitionRoute()
         App.LoginStateManager.transitionTo 'notAuthenticated'
         return
       alert "Error logging out: #{errorThrown}"

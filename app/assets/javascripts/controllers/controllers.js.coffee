@@ -8,11 +8,13 @@ App.NavbarController = Ember.ObjectController.extend
     log.log "NavbarController authent"
     @.get("authState") == App.LoginStateManager.authenticated
   ).property("authState")
-#  logout event can be captured here, but seems recommended thing is to
-#  capture events in routes.  also not obvious how to change pages from controllers
-#  logout: ->
-#    log.log "navbar loguot"
-#    App.LoginStateManager.send "logout"
+  #logout event can be captured here, but seems recommended thing is to
+  #capture events in routes.  also not obvious how to change pages from controllers
+  logout: ->
+    log.log "NavbarController handling loguot..."
+    me = @
+    App.logout -> me.transitionToRoute "home"
+
 
 App.WelcomeMsgController = Ember.ObjectController.extend
   authStateBinding: Ember.Binding.oneWay 'App.LoginStateManager.currentState'
