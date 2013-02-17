@@ -8,19 +8,19 @@ abbreviations = ->
   window.log = Em.Logger
 
 App.initCurrentUser = (currentUser) ->
-  Em.Logger.log "cu", currentUser
+  log.info "current user: ", currentUser
   App.currentUser =  currentUser if currentUser?.email
 
 App.initStateManagers = ->
   App.LoginStateManager = Ember.StateManager.create
     initialState: 'notAuthenticated'
     authenticated: Ember.State.create
-      enter: -> log.log "enter " + this.name
+      enter: -> log.debug "enter " + this.name
       logout: (manager, context) ->
         manager.transitionTo 'notAuthenticated'
 
     notAuthenticated: Ember.State.create
-      enter: ->  log.log "enter " + this.name
+      enter: ->  log.info "Enter " + this.name
       login: (manager, credentials) ->
         manager.transitionTo 'authenticated'
       register: (manager, credentials) ->

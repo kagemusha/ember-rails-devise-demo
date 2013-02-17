@@ -8,7 +8,7 @@ group :assets do
 end
 
 #remove barber after ember-rails updated
-gem "barber", :git => "git://github.com/darthdeus/barber.git", :branch => "update-handlebars-to-rc3"
+#gem "barber", :git => "git://github.com/darthdeus/barber.git", :branch => "update-handlebars-to-rc3"
 #though gem is here, ember.js and handlebar.js being read from javascripts/vendor dir until ember-rails updated to rc-1
 gem 'ember-rails'
 

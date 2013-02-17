@@ -35,7 +35,7 @@ App.register = (route) ->
 
 
 App.logout = (transitionRoute) ->
-  log.log "Logging out..."
+  log.info "Logging out..."
   $.ajax
     url: App.urls.logout
     type: "DELETE"
@@ -44,7 +44,7 @@ App.logout = (transitionRoute) ->
       #Devise logout sends a 204, which JQuery interprests as error so handle there
     error: (jqXHR, textStatus, errorThrown) ->
       if jqXHR.status==204 #this is fine.  logout successful no response returned
-        log.log "Logged out"
+        log.info "Logged out"
         App.currentUser = null
         transitionRoute()
         App.LoginStateManager.transitionTo 'notAuthenticated'

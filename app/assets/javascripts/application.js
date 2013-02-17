@@ -14,11 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 
-//= require vendor/handlebars-rc3
-//= require vendor/ember-1.0.0-rc.1
-      // will revert to following when ember-rails updated
-      // require handlebars
-      // require ember
+//= require handlebars
+//= require ember
 
 //= require ember-data
 //= require_self
