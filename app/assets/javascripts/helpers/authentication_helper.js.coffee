@@ -3,7 +3,6 @@ App.login = (route) ->
     url: App.urls.login
     type: "POST"
     data:
-       #would be nice if could do something like: user: route.currentModel.getJSON
       "user[email]": route.currentModel.email
       "user[password]": route.currentModel.password
     success: (data) ->
@@ -21,6 +20,7 @@ App.register = (route) ->
     data:
     #would be nice if could do something like this
     #user: @currentModel.getJSON
+    #(perhaps there is, but couldn't find)
       "user[name]": route.currentModel.name
       "user[email]": route.currentModel.email
       "user[password]": route.currentModel.password
@@ -34,20 +34,23 @@ App.register = (route) ->
 
 
 
-App.logout = (transitionRoute) ->
+App.logout = (transition) ->
   log.info "Logging out..."
   $.ajax
     url: App.urls.logout
     type: "DELETE"
     dataType: "json"
     success: ->
-      #Devise logout sends a 204, which JQuery interprests as error so handle there
+      logoutSuccess(transition) #generally not called by Devise - see note in error function
     error: (jqXHR, textStatus, errorThrown) ->
-      if jqXHR.status==204 #this is fine.  logout successful no response returned
-        log.info "Logged out"
-        App.currentUser = null
-        transitionRoute()
-        App.LoginStateManager.transitionTo 'notAuthenticated'
-        return
-      alert "Error logging out: #{errorThrown}"
+      #Devise logout sends a 204, which JQuery interprests as error so handle here
+      if jqXHR.status==204
+        logoutSuccess(transition)
+      else
+        alert "Error logging out: #{errorThrown}"
 
+logoutSuccess = (transition) ->
+  log.info "Logged out on server"
+  App.currentUser = null
+  App.LoginStateManager.transitionTo 'notAuthenticated'
+  transition()

@@ -12,13 +12,13 @@ App.Router.map ->
 App.IndexRoute = Ember.Route.extend
   redirect: -> @transitionTo 'home'
 
-App.HomeRoute = Ember.Route.extend
-  events:
-    logout: -> App.logout this
+#App.HomeRoute = Ember.Route.extend
+#  events:
+#    logout: -> App.logout this
 
-App.HelpRoute = Ember.Route.extend
-  events:
-    logout: -> App.logout this
+#App.HelpRoute = Ember.Route.extend
+#  events:
+#    logout: -> App.logout this
 
 
 App.LoginRoute = Ember.Route.extend
@@ -31,7 +31,7 @@ App.LoginRoute = Ember.Route.extend
       @transitionTo 'home'
     login: ->
       log.info "Logging in..."
-      App.infoin this
+      App.login this
 
 App.RegistrationRoute = Ember.Route.extend
   model: -> Ember.Object.create()
