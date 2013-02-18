@@ -11,7 +11,7 @@
   %body
     = yield
 
-:javascript
-  App.ready = function() {
-    App.initApp(jQuery.parseJSON('#{current_user_json}'))
-  }
+  :javascript
+    App.ready = function() {
+      App.initApp(jQuery.parseJSON('#{current_user_json}'))
+    }
