@@ -16,6 +16,25 @@ Ember Version
 -------------
 This app runs currently runs on [Ember.js 1.0 RC1](http://emberjs.com/blog/2013/02/15/ember-1-0-rc/)
 
+Getting Started
+---------------
+
+To run the app:
+
+    (clone or fork the project)
+    $ bundle install
+    $ bundle exec rake db:create
+    $ bundle exec rake db:migrate
+    $ bundle exec rake db:seed    (will create a test user, or just register a new one from the app)
+    $ rails server
+
+Tests
+-----
+
+There are a couple of capybara-webkit tests up.  The first tests a registration-logout-login cycle.  Was
+going to separate these out, but the standalone login test doesn't work for some reason (even though works in development).
+Appreciate if anyone can figure this out.
+
 
 Other Ember.js/Rails Resources
 ------------------------------
@@ -44,18 +63,6 @@ I found both of the following demos helpful (and new ones appearing all the time
 * [emblem.js](https://github.com/machty/emblem.js)
 
 
-
-Getting Started
----------------
-
-To run the app:
-
-    (clone or fork the project)
-    $ bundle install
-    $ bundle exec rake db:create
-    $ bundle exec rake db:migrate
-    $ bundle exec rake db:seed    (will create a test user, or just register a new one from the app)
-    $ rails server
 
 ###License
 Copyright 2013 Michael Madrid under the [MIT License](http://opensource.org/licenses/MIT)
