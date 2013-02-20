@@ -28,8 +28,8 @@ To run the app:
     $ bundle exec rake db:seed    (will create a test user, or just register a new one from the app)
     $ rails server
 
-Devise and JSON
----------------
+Devise with AJAX
+----------------
 
 When using Devise with AJAX you must add:
 
