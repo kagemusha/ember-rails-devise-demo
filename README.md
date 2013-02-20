@@ -28,6 +28,17 @@ To run the app:
     $ bundle exec rake db:seed    (will create a test user, or just register a new one from the app)
     $ rails server
 
+Devise and JSON
+---------------
+
+When using devise with AJAX you must add:
+
+    respond_to :html, :json
+
+to the appropriate Rails controller(s).  In this app, its been added to ApplicationController.  More [here](http://stackoverflow.com/questions/14319868/ember-js-with-devise-on-rails-application-406-not-acceptable-on-sign-up).
+
+The Devise AJAX calls are in **javascripts/helpers/authentication_helper.js.coffee**
+
 Tests
 -----
 
@@ -35,6 +46,10 @@ There are a couple of capybara-webkit tests up.  The first tests a registration-
 going to separate these out, but the standalone login test doesn't work for some reason (even though works in development).
 Appreciate if anyone can figure this out.
 
+Todo
+----
+
+Most immediately, **validations** and **tests** are sparse.  Plan to add features as time goes by.
 
 Other Ember.js/Rails Resources
 ------------------------------
