@@ -31,7 +31,7 @@ To run the app:
 Devise and JSON
 ---------------
 
-When using devise with AJAX you must add:
+When using Devise with AJAX you must add:
 
     respond_to :html, :json
 
@@ -46,8 +46,8 @@ There are a couple of capybara-webkit tests up.  The first tests a registration-
 going to separate these out, but the standalone login test doesn't work for some reason (even though works in development).
 Appreciate if anyone can figure this out.
 
-Todo
-----
+To Do
+-----
 
 Most immediately, **validations** and **tests** are sparse.  Plan to add features as time goes by.
 
