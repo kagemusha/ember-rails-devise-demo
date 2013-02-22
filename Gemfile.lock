@@ -66,6 +66,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    colorize (0.5.8)
     daemons (1.1.9)
     database_cleaner (0.9.1)
     debug_inspector (0.0.2)
@@ -110,6 +111,12 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.7)
+    konacha (2.5.0)
+      actionpack (>= 3.1, < 5)
+      capybara
+      colorize
+      railties (>= 3.1, < 5)
+      sprockets
     launchy (2.2.0)
       addressable (~> 2.3)
     mail (2.4.4)
@@ -222,6 +229,7 @@ DEPENDENCIES
   haml-rails (>= 0.3.5)
   hpricot (>= 0.8.6)
   jquery-rails
+  konacha
   quiet_assets (>= 1.0.1)
   rails (= 3.2.12)
   rolify (>= 3.2.0)

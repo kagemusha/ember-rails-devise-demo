@@ -42,9 +42,24 @@ The Devise AJAX calls are in **javascripts/helpers/authentication_helper.js.coff
 Tests
 -----
 
+###Capybara Tests###
+
 There are a couple of capybara-webkit tests up.  The first tests a registration-logout-login cycle.  Was
 going to separate these out, but the standalone login test doesn't work for some reason (even though works in development).
 Appreciate if anyone can figure this out.
+
+###Konacha###
+
+[Konacha](https://github.com/jfirebaugh/konacha) is a Rails engine that allows you to test your JavaScript with the Mocha test framework and chai assertion library.
+
+Setup is easy.  Just:
+
+1. Add the gem to your gemfile (and run bundle install)
+2. Write some tests
+3. Run the task: **bundle exec rake konacha:serve**.  This will startup up a server running, by default" on port 3500.
+4. Go to localhost:3500 to see test results
+
+See the github page for detailed info.
 
 To Do
 -----

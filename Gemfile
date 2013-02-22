@@ -41,3 +41,8 @@ group :test do
   gem "email_spec", ">= 1.4.0"
   gem 'capybara-screenshot'
 end
+
+group :test, :development do
+  gem 'konacha'
+  #gem 'poltergeist' #replace capy-webkit
+end
