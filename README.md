@@ -4,7 +4,9 @@ Ember Rails Devise Demo
 This app is working example of using Ember with Rails and Devise.  As Ember matures, I hope to expand it with other common Ember
 paradigms.
 
-**Disclaimer:** Ember.js is still very new and in flux, I am far from an expert, and documentation, though improving, is still not comprehensive.  While I intend to update and expand this demo with best practices as they become known to me, at present the code here should be viewed more as possible ways to get things done.  Welcome input on improvements.
+**Disclaimer:** Ember.js is still very new and in flux, I am far from an expert, and documentation,
+while improving, is still not comprehensive.  Code here should be viewed as possible ways
+ to do things, not the definitive way.  Welcome input on improvements.
 
 
 Features
@@ -14,7 +16,7 @@ Features
 
 Ember Version
 -------------
-This app runs currently runs on [Ember.js 1.0 RC1](http://emberjs.com/blog/2013/02/15/ember-1-0-rc/)
+Currently runs on [Ember.js 1.0 RC1](http://emberjs.com/blog/2013/02/15/ember-1-0-rc/)
 
 Getting Started
 ---------------
@@ -31,13 +33,13 @@ To run the app:
 Basic Architecture
 ------------------
 
-In traditional Rails apps, pretty much every user click sends an HTTP request.  The server
-processes the request, and formats and sends an HTML page as a response.  This will happen
-even for something the client should be able to handle, such as sorting a list on the page.
+In traditional Rails apps, pretty much every user click results in an HTTP request.  The server
+processes the request, and generate an HTML page it returns to the client.  This happens
+even for tasks the client has the data to handle, such as sorting a list on the page.
 
-To improve responsiveness, Web 2.0 moves responsibility to the client using Javascript
-libraries such as JQuery.  As clients have gotten more complex, the need has arisen for more
- comprehensive frameworks/libraries such as Ember.
+To improve responsiveness, Web 2.0 moves responsibility to the client using Javascript and
+libraries such as JQuery.  But these more complex clients no longer can rely on server constructs.
+ Hence the need for comprehensive client-side frameworks such as Ember.
 
 In the Ember/Rails world, Ember handles client interactions and page display.  Rails may serve
 the initial page, as done here (also can be done by an HTTP server like nginx). Then it waits for
@@ -77,14 +79,14 @@ Appreciate if anyone can figure this out.
 
 The tests here are for reference to show how to set up Konacha and far from comprehensive.
 
-Setup is easy.  Just:
+Setup is easy:
 
 1. Add the gem to your gemfile (and run bundle install)
 2. Write some tests
 3. Run the task: **bundle exec rake konacha:serve**.  This will startup up a server running, by default" on port 3500.
 4. Go to localhost:3500 to see test results
 
-See the github page for detailed info.
+See the [Konacha](https://github.com/jfirebaugh/konacha) github page for detailed info.
 
 To Do
 -----
