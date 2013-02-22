@@ -31,17 +31,17 @@ To run the app:
 Basic Architecture
 ------------------
 
-In a traditional Rails app, whenever the user clicks on something, an HTTP call goes back to the
-server, which responds to the users request and spits out a new HTML page, even for something
-fairly trivial like sorting a list of items on a page.  With Web 2.0, this has been changing and
-people have been using Javascript libraries like JQuery to move more responsibility to the client,
-which improves responsiveness and eases server load.  As clients have gotten more complex, however,
-the need for a more comprehensive approach has been more glaringly necessary, hence the profusion of
-frameworks/libraries such as Backbone and Ember.
+In traditional Rails apps, pretty much every user click sends an HTTP request.  The server
+processes the request, and formats and sends an HTML page as a response.  This will happen
+even for something the client should be able to handle, such as sorting a list on the page.
+
+To improve responsiveness, Web 2.0 moves responsibility to the client using Javascript
+libraries such as JQuery.  As clients have gotten more complex, the need has arisen for more
+ comprehensive frameworks/libraries such as Ember.
 
 In the Ember/Rails world, Ember handles client interactions and page display.  Rails may serve
-the initial page, as done here (also can be done by an HTTP server), then generally waits for AJAX requests,
-which come when the client wants to send/receive data.
+the initial page, as done here (also can be done by an HTTP server like nginx). Then it waits for
+AJAX requests and responds with JSON.
 
 Under this architecture, the Rails components which pertain directly with the client are:
 
