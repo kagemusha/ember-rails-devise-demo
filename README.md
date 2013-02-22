@@ -28,6 +28,29 @@ To run the app:
     $ bundle exec rake db:seed    (will create a test user, or just register a new one from the app)
     $ rails server
 
+Basic Architecture
+------------------
+
+In a traditional Rails app, whenever the user clicks on something, an HTTP call goes back to the
+server, which responds to the users request and spits out a new HTML page, even for something
+fairly trivial like sorting a list of items on a page.  With Web 2.0, this has been changing and
+people have been using Javascript libraries like JQuery to move more responsibility to the client,
+which improves responsiveness and eases server load.  As clients have gotten more complex, however,
+the need for a more comprehensive approach has been more glaringly necessary, hence the profusion of
+frameworks/libraries such as Backbone and Ember.
+
+In the Ember/Rails world, Ember handles client interactions and page display.  Rails may serve
+the initial page, as done here (also can be done by an HTTP server), then generally waits for AJAX requests,
+which come when the client wants to send/receive data.
+
+Under this architecture, the Rails components which pertain directly with the client are:
+
+1. a bare-bones layout (views/layouts/application.html) which includes the Ember client and css
+2. a blank root page (here view/home/index)
+3. a root controller (here HomeController)
+4. routes defined in routes.rb
+5. serializers, here using the active_model_serializer gem for packaging (in the app/serializers directory)
+
 Devise with AJAX
 ----------------
 
@@ -48,9 +71,11 @@ There are a couple of capybara-webkit tests up.  The first tests a registration-
 going to separate these out, but the standalone login test doesn't work for some reason (even though works in development).
 Appreciate if anyone can figure this out.
 
-###Konacha###
+###Konacha Tests###
 
 [Konacha](https://github.com/jfirebaugh/konacha) is a Rails engine that allows you to test your JavaScript with the Mocha test framework and chai assertion library.
+
+The tests here are for reference to show how to set up Konacha and far from comprehensive.
 
 Setup is easy.  Just:
 
