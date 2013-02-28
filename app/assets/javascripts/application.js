@@ -14,10 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 
-//= require handlebars
+//= require handlebars.js
 //= require ember
-
 //= require ember-data
+
 //= require_self
 //= require ember_app
 App = Ember.Application.create();
