@@ -11,6 +11,7 @@ gem "haml", ">= 3.1.7"
 gem "bootstrap-sass", ">= 2.2.2.0"
 
 gem "figaro", ">= 0.5.3"
+gem "thin", ">= 1.5.0"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -24,7 +25,6 @@ end
 
 group :test, :development do
   gem 'sqlite3'
-  gem "thin", ">= 1.5.0"
   gem "rspec-rails", ">= 2.12.2"
   gem "factory_girl_rails", ">= 4.2.0"
   gem 'konacha'
