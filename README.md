@@ -4,6 +4,8 @@ Ember Rails Devise Demo
 This app is working example of using Ember with Rails and Devise.  As Ember matures, I hope to expand it with other common Ember
 paradigms.
 
+The running app can be viewed at: http://emrailsdevise.herokuapp.com/
+
 **Disclaimer:** Ember.js is still very new and in flux, I am far from an expert, and documentation,
 while improving, is still not comprehensive.  Code here should be viewed as possible ways
  to do things, not the definitive way.  Welcome input on improvements.
