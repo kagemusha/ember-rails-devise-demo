@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 
-// Heroku can't find these from the ember-rails gem
-// Remove these file and chg require statements when this fixed
+// *** Heroku can't find these from the ember-rails gem
+// *** Edit below require statements and remove vendor files when this fixed
 //= require vendor/handlebars-rc3
 //= require vendor/ember-1.0.0-rc.1
 //= require vendor/ember-data

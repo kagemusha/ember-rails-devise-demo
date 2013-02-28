@@ -6,12 +6,17 @@ App.login = (route) ->
       "user[email]": route.currentModel.email
       "user[password]": route.currentModel.password
     success: (data) ->
+      log.log "Login Msg #{data.user.dummy_msg}"
       App.currentUser =  data.user
       App.LoginStateManager.transitionTo "authenticated"
       route.transitionTo 'home'
     error: (jqXHR, textStatus, errorThrown) ->
       if jqXHR.status==401
         route.controllerFor('login').set "errorMsg", "That email/password combo didn't work.  Please try again"
+      else if jqXHR.status==406
+        route.controllerFor('login').set "errorMsg", "Request not acceptable (406):  make sure Devise responds to JSON."
+      else
+        p "Login Error: #{jqXHR.status} | #{errorThrown}"
 
 App.register = (route) ->
   $.ajax
