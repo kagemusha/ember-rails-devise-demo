@@ -93,6 +93,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
     ffi (1.4.0)
     figaro (0.5.3)
       rails (~> 3.0)
@@ -105,6 +107,7 @@ GEM
       railties (>= 3.1, < 4.1)
     hike (1.2.1)
     hpricot (0.8.6)
+    http_parser.rb (0.5.3)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -127,6 +130,10 @@ GEM
     multi_json (1.6.1)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
+    poltergeist (1.1.0)
+      capybara (~> 2.0, >= 2.0.1)
+      faye-websocket (~> 0.4, >= 0.4.4)
+      http_parser.rb (~> 0.5.3)
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -230,6 +237,7 @@ DEPENDENCIES
   hpricot (>= 0.8.6)
   jquery-rails
   konacha
+  poltergeist
   quiet_assets (>= 1.0.1)
   rails (= 3.2.12)
   rolify (>= 3.2.0)

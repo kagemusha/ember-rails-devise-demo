@@ -1,4 +1,5 @@
 //= require ./shortcuts
+//= require ./settings
 //= require ./store
 //= require_tree ./models
 //= require_tree ./controllers

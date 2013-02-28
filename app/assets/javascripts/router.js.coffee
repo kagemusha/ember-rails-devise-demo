@@ -8,17 +8,8 @@ App.Router.map ->
   @route "registration"
 
 
-
 App.IndexRoute = Ember.Route.extend
   redirect: -> @transitionTo 'home'
-
-#App.HomeRoute = Ember.Route.extend
-#  events:
-#    logout: -> App.logout this
-
-#App.HelpRoute = Ember.Route.extend
-#  events:
-#    logout: -> App.logout this
 
 
 App.LoginRoute = Ember.Route.extend
