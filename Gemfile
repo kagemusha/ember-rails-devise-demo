@@ -1,20 +1,15 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.12'
-gem 'sqlite3'
-
-gem 'jquery-rails'
-gem 'ember-rails'
-
-
-gem "thin", ">= 1.5.0", :group => [:development, :test]
-gem "haml", ">= 3.1.7"
-gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.2.2.0"
 gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem "active_model_serializers"
+
+gem 'jquery-rails'
+gem 'ember-rails'
+gem "haml", ">= 3.1.7"
+gem "bootstrap-sass", ">= 2.2.2.0"
+
 gem "figaro", ">= 0.5.3"
 
 group :assets do
@@ -23,7 +18,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg'
+end
 
+group :test, :development do
+  gem 'sqlite3'
+  gem "thin", ">= 1.5.0"
+  gem "rspec-rails", ">= 2.12.2"
+  gem "factory_girl_rails", ">= 4.2.0"
+  gem 'konacha'
+  gem 'poltergeist' #replace capy-webkit
+end
 
 group :development do
   gem "quiet_assets", ">= 1.0.1"
@@ -36,14 +42,9 @@ end
 
 group :test do
   gem "capybara", ">= 2.0.2"
-  gem "poltergeist"
   gem "capybara-webkit"
   gem "database_cleaner", ">= 0.9.1"
   gem "email_spec", ">= 1.4.0"
   gem 'capybara-screenshot'
 end
 
-group :test, :development do
-  gem 'konacha'
-  #gem 'poltergeist' #replace capy-webkit
-end
