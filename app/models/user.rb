@@ -6,7 +6,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  def admin?
+    has_admin_role = has_role? :admin
+    p "is admin: #{has_admin_role}"
+    has_admin_role
+  end
   
 end

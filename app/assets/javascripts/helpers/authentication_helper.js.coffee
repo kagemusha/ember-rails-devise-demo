@@ -1,4 +1,5 @@
-App.login = (route) ->
+App.Authentication ||= {}
+App.Authentication.login = (route) ->
   $.ajax
     url: App.urls.login
     type: "POST"
@@ -18,7 +19,7 @@ App.login = (route) ->
       else
         p "Login Error: #{jqXHR.status} | #{errorThrown}"
 
-App.register = (route) ->
+App.Authentication.register = (route) ->
   $.ajax
     url: App.urls.register
     type: "POST"
@@ -37,7 +38,7 @@ App.register = (route) ->
     error: (jqXHR, textStatus, errorThrown) ->
       route.controllerFor('registration').set "errorMsg", "That email/password combo didn't work.  Please try again"
 
-App.logout = (transition) ->
+App.Authentication.logout = (transition) ->
   log.info "Logging out..."
   $.ajax
     url: App.urls.logout

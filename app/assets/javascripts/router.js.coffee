@@ -15,6 +15,7 @@ App.IndexRoute = Ember.Route.extend
 App.LoginRoute = Ember.Route.extend
   model: -> Ember.Object.create()
   setupController: (controller, model) ->
+    controller.set 'content', model
     controller.set "errorMsg", ""
   events:
     cancel: ->
@@ -22,14 +23,14 @@ App.LoginRoute = Ember.Route.extend
       @transitionTo 'home'
     login: ->
       log.info "Logging in..."
-      App.login this
+      App.Authentication.login this
 
 App.RegistrationRoute = Ember.Route.extend
   model: -> Ember.Object.create()
   events:
     register: ->
       log.info "Registering..."
-      App.register this
+      App.Authentication.register this
     cancel: ->
       log.info "cancelling registration"
       @transitionTo 'home'
