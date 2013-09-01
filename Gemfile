@@ -8,8 +8,6 @@ gem 'rolify'
 
 gem 'jquery-rails'
 gem 'ember-rails'
-#gem 'ember-source', '1.0.0.rc7' # or the version you need
-#gem 'handlebars-source', '1.0.12' #
 
 
 gem 'sass-rails', '~> 4.0.0'
