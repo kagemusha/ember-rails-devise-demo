@@ -9,7 +9,8 @@ App.Router.map ->
 
 
 App.IndexRoute = Ember.Route.extend
-  redirect: -> @transitionTo 'home'
+  beforeModel: (transition) ->
+    @transitionTo 'home'
 
 
 App.LoginRoute = Ember.Route.extend
@@ -20,7 +21,7 @@ App.LoginRoute = Ember.Route.extend
   actions:
     login: ->
       log.info "Logging in..."
-      App.Authentication.login this
+      @controllerFor("auth").login this
     cancel: ->
       log.info "cancelling login"
       @transitionTo 'home'
@@ -30,7 +31,7 @@ App.RegistrationRoute = Ember.Route.extend
   actions:
     register: ->
       log.info "Registering..."
-      App.Authentication.register this
+      @controllerFor("auth").register this
     cancel: ->
       log.info "cancelling registration"
       @transitionTo 'home'

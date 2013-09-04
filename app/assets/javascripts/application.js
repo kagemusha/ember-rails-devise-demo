@@ -16,7 +16,6 @@
 
 //= require vendor/handlebars-1.0.0
 //= require vendor/ember-1.0.0
-//= require vendor/ember-states
 //= require vendor/ember-data
 
 //= require_self

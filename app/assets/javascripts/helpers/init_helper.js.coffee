@@ -1,10 +1,5 @@
 App.initApp = (currentUser) ->
-  App.initCurrentUser currentUser
-  App.LoginStateManager.transitionTo 'authenticated' if App.currentUser
+  App.__container__.lookup('controller:auth').set 'currentUser', currentUser
 
-
-App.initCurrentUser = (currentUser) ->
-  log.info "current user: ", currentUser
-  App.currentUser =  currentUser if currentUser?.email
 
 
