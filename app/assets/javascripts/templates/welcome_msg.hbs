@@ -1,8 +1,14 @@
 {{#if user}}
   <div class="container-fluid">
     <div class="greeting">
-        <span class="hello" >Hi {{user.name}}</span>
-        ({{user.email}})
+        <span class="hello" >Hi
+          {{#if isAuthenticated}}
+            {{hiName}}
+          {{else}}
+            guest
+          {{/if}}
+        </span>
+
     </div>
   </div>
 {{/if}}

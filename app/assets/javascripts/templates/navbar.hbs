@@ -1,12 +1,12 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
-      <div class="brand strong">{{#linkTo home}}Ember-Rails-Devise{{/linkTo}}</div>
+      <div class="brand strong">{{#linkTo 'home'}}Ember-Rails-Devise{{/linkTo}}</div>
       <ul class="nav">
           <li>{{#linkTo help}}Help{{/linkTo}}</li>
       </ul>
       <div class="btn-group pull-right">
-        {{#if authenticated}}
+        {{#if isAuthenticated}}
             <button class="btn" {{action logout}}>Logout</button>
         {{else}}
             {{view App.MenuItem href="#/login" label="Login" }}
