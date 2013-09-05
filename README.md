@@ -1,24 +1,21 @@
 Ember Rails Devise Demo
 =======================
 
-This app is working example of using Ember with Rails and Devise.  As Ember matures, I hope to expand it with other common Ember
-paradigms.
+This app is working example of using Ember with Rails and Devise.
 
 The running app can be viewed at: http://emrailsdevise.herokuapp.com/
 
-**Disclaimer:** Ember.js is still very new and in flux, I am far from an expert, and documentation,
-while improving, is still not comprehensive.  Code here should be viewed as possible ways
- to do things, not the definitive way.  Welcome input on improvements.
-
+For a more full-featured Ember example app using Ember, Rails and Devise, see 
+[Crambear, an Ember flashcards app](https://github.com/kagemusha/crambear).
 
 Features
 --------
 * User Login and Registration using Devise
-* Illustrates basic usages of Ember components like routes, controllers, views, templates, state managers.
+* Illustrates basic usages of Ember components like routes, controllers, and templates.
 
 Ember Version
 -------------
-Currently runs on [Ember.js 1.0 RC1](http://emberjs.com/blog/2013/02/15/ember-1-0-rc/)
+Currently runs on [Ember.js 1.0](http://emberjs.com/blog/2013/08/31/ember-1-0-released.html)
 
 Getting Started
 ---------------
@@ -32,20 +29,22 @@ To run the app:
     $ bundle exec rake db:seed    (will create a test user, or just register a new one from the app)
     $ rails server
 
-Basic Architecture
-------------------
+Basic Architecture of an Ember App
+----------------------------------
 
 In traditional Rails apps, pretty much every user click results in an HTTP request.  The server
-processes the request, and generate an HTML page it returns to the client.  This happens
+processes the request, and generate an HTML page, which it returns to the client.  This happens
 even for tasks the client has the data to handle, such as sorting a list on the page.
 
 To improve responsiveness, Web 2.0 moves responsibility to the client using Javascript and
-libraries such as JQuery.  But these more complex clients no longer can rely on server constructs.
- Hence the need for comprehensive client-side frameworks such as Ember.
+libraries such as JQuery.  Rails 4 has also moved in this direction with Turbolinks.  But these more 
+complex clients no longer can rely on the server framework Rails did so well. Hence the need for 
+comprehensive client-side frameworks such as Ember.
 
 In the Ember/Rails world, Ember handles client interactions and page display.  Rails may serve
 the initial page, as done here (also can be done by an HTTP server like nginx). Then it waits for
-AJAX requests and responds with JSON.
+AJAX requests and responds with JSON, often using a gem such as 
+[Active Model Serializers](https://github.com/rails-api/active_model_serializers).
 
 Under this architecture, the Rails components which pertain directly with the client are:
 
@@ -64,7 +63,7 @@ When using Devise with AJAX you must add:
 
 to the appropriate Rails controller(s).  In this app, its been added to ApplicationController.  More [here](http://stackoverflow.com/questions/14319868/ember-js-with-devise-on-rails-application-406-not-acceptable-on-sign-up).
 
-The Devise AJAX calls are in **javascripts/helpers/authentication_helper.js.coffee**
+The Devise AJAX calls are in the AuthController in **javascripts/controllers/controllers.js.coffee**
 
 Tests
 -----
@@ -104,16 +103,9 @@ The official guides:
 
 * http://emberjs.com/guides/
 
-Peepcode
-
-* [Ember.js Peepcode (Jan 2013)](https://peepcode.com/products/emberjs)
-
-  Definitely worthwhile, though found it easier to watch it at 2X speed as recitation a tad slow
-  
-I found both of the following demos helpful (and new ones appearing all the time):
+The following is useful and fairly up to date (RC6 as of end Aug 2013):
 
 * [ember_data_examle](https://github.com/dgeb/ember_data_example)
-* [ember_todo](https://github.com/Skalar/ember_todo)
 
 ### Add-ons
 
