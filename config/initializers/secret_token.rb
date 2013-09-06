@@ -6,4 +6,4 @@
 # no regular words or you'll be exposed to dictionary attacks.
 
 #IMPORTANT:  set EBR_SECRET_KEY_BASE in your environment
-EmberRailsDevise::Application.config.secret_key_base = ENV['EBR_SECRET_KEY_BASE']
+EmberRailsDevise::Application.config.secret_key_base = ENV['ERD_SECRET_KEY_BASE']
