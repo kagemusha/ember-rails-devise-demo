@@ -1,19 +1,15 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  database: ember_rails_devise_dev
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  database: ember_rails_devise_test
 
 #dummy to get assets:precompile to work
 #see http://devcenter.heroku.com/articles/rails31_heroku_cedar
-production:
-  adapter: postgresql
-  database: crambear_production
-  username: postgres
-  password: pwwwwww23
+#production:
+#  adapter: postgresql
+#  database: crambear_production
+#  username: postgres
+#  password: pwwwwww23

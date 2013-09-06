@@ -3,11 +3,16 @@ require 'spec_helper'
 feature "AUTHENTICATION", :js => true do
 
   let(:user_name)   { "Tester"}
-  let(:email)       {"test@test.com"}
+  let(:email)       {"test1@test.com"}
   let(:pw)    {"tester"}
   let(:register_fields) { {name: user_name, email: email, password: pw, password_confirmation: pw} }
+  let(:fail_msg) { "That email/password combo didn't work" }
+  before(:all) do
+    User.destroy_all
+  end
 
-  scenario 'register,logout,login with valid email and password', :driver => :webkit do
+  scenario 'register,logout,login with valid email and password' do
+    User.destroy_all
     visit "/#/registration"
     submit_form register_fields, "Register"
     page.should have_content "Hi #{user_name}"
@@ -15,33 +20,41 @@ feature "AUTHENTICATION", :js => true do
     click_button "Logout"
     page.should have_content "Login"
     visit "/#/login"
-    submit_form({email: email, password: pw}, "Login")
+    login email, pw
     page.should have_content "Hi #{user_name}"
   end
 
-  #this is failing even though works in above test
-  #user seems to be created, screenshot (see submit_form) seems ok
-  #so not sure what's amiss
-  scenario 'login with valid credentials', :driver => :webkit do
-    User.create! register_fields
+  scenario 'login with valid credentials' do
+    #User.create! register_fields
     User.first.email.should == email
     visit "/#/login"
-    submit_form({email: email, password: pw}, "Login")
+    login email, pw
     page.should have_content "Hi #{user_name}"
   end
 
-  #scenario 'with invalid email' do
-  #  sign_up_with 'invalid_email', 'password'
-  #
-  #  expect(page).to have_content('Sign in')
-  #end
-  #
-  #scenario 'with blank password' do
-  #  sign_up_with 'valid@example.com', ''
-  #
-  #  expect(page).to have_content('Sign in')
-  #end
+  scenario 'register with invalid email and password' do
+    visit "/#/registration"
+    register_fields[:email] = "xxeeegmail.com"
+    submit_form register_fields, "Register"
+    page.should have_content fail_msg
+  end
 
+  scenario 'login with invalid email or password' do
+    visit "/#/login"
+    login "guma@bearz.com", pw
+    page.should have_content fail_msg
+    login email, "happyburz"
+    page.should have_content fail_msg
+  end
+
+
+  after(:all) do
+    User.destroy_all
+  end
+
+  def login(email, pw)
+    submit_form({email: email, password: pw}, "Login")
+  end
   def submit_form(fields, button)
     fields.each_pair do |field, val|
       fill_in field, with: val

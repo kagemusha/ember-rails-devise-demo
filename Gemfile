@@ -23,11 +23,11 @@ group :production do
 end
 
 group :test, :development do
-  gem 'sqlite3'
+  gem 'pg'
   gem "rspec-rails", ">= 2.12.2"
   gem "factory_girl_rails", ">= 4.2.0"
   gem 'konacha'
-  gem 'poltergeist' #replace capy-webkit
+  gem 'poltergeist'
 end
 
 group :development do
@@ -41,9 +41,6 @@ end
 
 group :test do
   gem "capybara", ">= 2.0.2"
-#  gem "capybara-webkit"
-  gem "database_cleaner", ">= 0.9.1"
-  gem "email_spec", ">= 1.4.0"
   gem 'capybara-screenshot'
 end
 
