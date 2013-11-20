@@ -27,7 +27,7 @@ To run the app:
     $ bundle exec rake db:create
     $ bundle exec rake db:migrate
     $ bundle exec rake db:seed            #will create a test user, or just register a new one from the app
-    $ export EBR_SECRET_KEY_BASE='generate-a-secret-key'   #used in initializers/config/secret_token.rb
+    $ export ERD_SECRET_KEY_BASE='generate-a-secret-key'   #used in initializers/config/secret_token.rb
     $ rails server
 
 Basic Architecture of an Ember App
