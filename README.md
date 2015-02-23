@@ -1,5 +1,12 @@
+Deprecation Warning
+-------------------
+
+This project has fallen out of date and I don't intend to maintain it.  I strongly recomment people move to [ember-cli](http://www.ember-cli.com/)-based architectures as this is the future of ember.  I have a couple of
+ember-cli based apps with companion Rails/Devise apps you can look at [crambear] (https://github.com/kagemusha/crambear)/[crambear-api](https://github.com/kagemusha/crambear-api) and [emblog](https://github.com/kagemusha/emblog)/[emblog-server](https://github.com/kagemusha/emblog-server).
+
 Ember Rails Devise Demo
 =======================
+
 
 This app is working example of using Ember with Rails and Devise.
 
