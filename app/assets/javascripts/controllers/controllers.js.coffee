@@ -13,7 +13,7 @@ App.AuthController = Ember.ObjectController.extend
         "user[email]": route.currentModel.email
         "user[password]": route.currentModel.password
       success: (data) ->
-        log.log "Login Msg #{data.user.dummy_msg}"
+        log.info "Login Msg #{data.user.dummy_msg}"
         me.set 'currentUser', data.user
         route.transitionTo 'home'
       error: (jqXHR, textStatus, errorThrown) ->

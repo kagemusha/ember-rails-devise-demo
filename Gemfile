@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'active_model_serializers'
 gem 'devise'
@@ -8,21 +10,19 @@ gem 'rolify'
 
 gem 'jquery-rails'
 gem 'ember-rails'
+gem 'ember-source', '1.5.1.1'
+gem 'ember-data-source', '1.0.0.beta.7'
 
 
 gem 'sass-rails', '~> 4.0.0'
-gem "bootstrap-sass", ">= 2.2.2.0"
+gem "bootstrap-sass", "2.3.2.0"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem "haml", ">= 3.1.7"
+gem 'pg'
 
-
-group :production do
-  gem 'pg'
-end
 
 group :test, :development do
-  gem 'pg'
   gem "rspec-rails", ">= 2.12.2"
   gem "factory_girl_rails", ">= 4.2.0"
   gem 'konacha'

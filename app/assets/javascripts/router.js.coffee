@@ -2,16 +2,10 @@
 ## They are grouped together here for ease of exposition
 
 App.Router.map ->
-  @route "home"
+  @route "home", path: '/'
   @route "help"
   @route "login"
   @route "registration"
-
-
-App.IndexRoute = Ember.Route.extend
-  beforeModel: (transition) ->
-    @transitionTo 'home'
-
 
 App.LoginRoute = Ember.Route.extend
   model: -> Ember.Object.create()
